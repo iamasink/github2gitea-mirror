@@ -1,0 +1,16 @@
+services:
+  github2gitea-mirror:
+    container_name: github2gitea-mirror
+    build: .
+    environment:
+      - ACCESS_TOKEN=xyz
+      - GITEA_URL=gitea:3000
+      - GITHUB_TOKEN=ghp_abc
+    command:
+      [
+        "bash",
+        "-c",
+        "env && sleep 60 && ./github2gitea-mirror.sh --mode user --user username --visibility public",
+      ]
+    depends_on:
+      - gitea
