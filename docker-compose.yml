@@ -1,7 +1,7 @@
 services:
   github2gitea-mirror:
     container_name: github2gitea-mirror
-    
+
     # build: .
     image: ghcr.io/iamasink/github2gitea-mirror:latest
 
@@ -13,7 +13,7 @@ services:
       [
         "bash",
         "-c",
-        "env && sleep 60 && ./github2gitea-mirror.sh --mode user --user username --visibility public",
+        "env && sleep 60 && ./github2gitea-mirror.sh --mode user --user YOURUSERNAME --visibility public",
       ]
     depends_on:
       - gitea
