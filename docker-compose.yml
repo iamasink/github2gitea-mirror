@@ -1,7 +1,10 @@
 services:
   github2gitea-mirror:
     container_name: github2gitea-mirror
-    build: .
+    
+    # build: .
+    image: ghcr.io/iamasink/github2gitea-mirror:latest
+
     environment:
       - ACCESS_TOKEN=xyz
       - GITEA_URL=gitea:3000
